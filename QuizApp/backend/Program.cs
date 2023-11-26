@@ -1,9 +1,9 @@
-﻿
-// OBIEKT => class
-// CECHY => properties
+﻿using QuizApp.backend;
+var game = new Game();
+game.CreateQuestions();
 
-using QuizApp.backend;
 
-var p = new Question();
+
+
 
 Console.ReadLine();
