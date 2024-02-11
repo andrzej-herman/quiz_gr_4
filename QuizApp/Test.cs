@@ -29,4 +29,19 @@ namespace QuizApp
     //{
     //    Console.WriteLine(imie);
     //}
+
+
+
+
+    //var lista = new List<string>();
+    //lista.Add("Ala");
+    //lista.Add("Klaudia");
+    //lista.Add("Basia");
+    //lista.Add("Kasia");
+
+
+    //var elementy = lista.Where(x => x.StartsWith("K")).ToList();
+    //Console.WriteLine();
+
+    //Console.ReadLine();
 }

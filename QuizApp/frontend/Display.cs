@@ -20,7 +20,7 @@ namespace QuizApp.frontend
             Console.ReadLine();
         }
 
-        public static void DisplayQuestion(Question question)
+        public static int DisplayQuestionAndGetAnswer(Question question)
         {
             Console.Clear();
             Console.WriteLine();
@@ -28,14 +28,56 @@ namespace QuizApp.frontend
             Console.WriteLine();
             Console.WriteLine(" " + question.Content);
             Console.WriteLine();
-            var n = 1;
             foreach (var a in question.Answers)
             {
-                Console.WriteLine($" {n}. {a}");
-                n++;
+                Console.WriteLine($" {a.Number}. {a.Content}");  
             }
             Console.WriteLine();
             Console.Write(" Naciśnij 1, 2, 3 lub 4 => ... ");
+            var answer = Console.ReadLine();
+            return int.Parse(answer);
+        }
+
+
+        public static void GameOverText()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine();
+            Console.WriteLine(" Niestety, to nie jest poprawna odpowiedź.");
+            Console.WriteLine();
+            Console.WriteLine(" KONIEC GRY");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.ReadLine();
+        }
+
+        public static void GoodAnswerText(int points)
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine();
+            Console.WriteLine(" Brawo, to jest poprawna odpowiedź !!!");
+            Console.WriteLine();
+            Console.WriteLine($" Za to pytanie zdobyłeś/aś {points} pkt.");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine();
+            Console.Write(" Naciśnij ENTER, aby zobaczyć następne pytanie ... ");
+            Console.ReadKey();
+        }
+
+
+        public static void SuccessText(int points)
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine();
+            Console.WriteLine(" Brawo, ukonczyłeś/aś cały Quiz !!!");
+            Console.WriteLine();
+            Console.WriteLine($" Łącznie zdobyłeś/aś {points} pkt. Gratulacje !!!");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine();
+            Console.ReadLine();
+
         }
 
 
